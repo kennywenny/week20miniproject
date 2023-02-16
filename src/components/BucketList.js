@@ -7,9 +7,7 @@ function BucketList() {
 
   // Function to add a bucket list item
   const addBucketItem = (item) => {
-
-    // TODO: Write logic to add the new bucket item to the bucket state variable
-    
+    setBucket([...bucket, item])
   };
 
   // Function to mark bucket list item as complete

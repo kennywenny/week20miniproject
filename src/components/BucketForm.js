@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function BucketForm(props) {
+function BucketForm({ edit, onSubmit }) {
   const [input, setInput] = useState('');
   let [eagerness, setEagerness] = useState('');
 
@@ -14,7 +14,7 @@ function BucketForm(props) {
       eagerness = 'low';
     }
 
-    props.onSubmit({
+    onSubmit({
       id: Math.random(Math.floor() * 1000),
       text: input,
       eagerness: eagerness,
@@ -30,7 +30,7 @@ function BucketForm(props) {
 
   // First we check to see if "edit" prop exists. If not, we render the normal form
   // If the prop "edit" exists, we know to render the update form instead
-  return !props.edit ? (
+  return !edit ? (
     <div>
       <form className="bucket-form" onSubmit={handleSubmit}>
         <input
@@ -47,9 +47,9 @@ function BucketForm(props) {
           </button>
           <div className="dropdown-content">
             {/* TODO: Add an onClick event that will set the corresponding eagerness level from the `eagernessLevel` array */}
-            <p onClick={() => {}}>Must do</p>
-            <p onClick={() => {}}>Want to do</p>
-            <p onClick={() => {}}>Take it or leave it</p>
+            <p onClick={() => { }}>Must do</p>
+            <p onClick={() => { }}>Want to do</p>
+            <p onClick={() => { }}>Take it or leave it</p>
           </div>
         </div>
         <button className="bucket-button">Add bucket list item</button>
@@ -57,11 +57,11 @@ function BucketForm(props) {
     </div>
   ) : (
     <div>
-      <h3>Update entry: {props.edit.value}</h3>
+      <h3>Update entry: {edit.value}</h3>
       <form className="bucket-form" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder={props.edit.value}
+          placeholder={edit.value}
           value={input}
           name="text"
           className="bucket-input"
@@ -73,9 +73,9 @@ function BucketForm(props) {
           </button>
           <div className="dropdown-content">
             {/* TODO: Add an onClick event that will set the corresponding eagerness level from the `eagernessLevel` array */}
-            <p onClick={() => {}}>Must do</p>
-            <p onClick={() => {}}>Want to do</p>
-            <p onClick={() => {}}>Take it or leave it</p>
+            <p onClick={() => { }}>Must do</p>
+            <p onClick={() => { }}>Want to do</p>
+            <p onClick={() => { }}>Take it or leave it</p>
           </div>
         </div>
         <button className="bucket-button">Update</button>

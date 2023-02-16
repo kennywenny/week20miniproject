@@ -23,24 +23,24 @@ function Bucket(props) {
     return <BucketForm edit={edit} onSubmit={submitUpdate} />;
   }
 
-  return props.bucket.map((item, index) => (
+  {/*
     // TODO: Add a className of `bucket row complete ${item.eagerness}` for completed items, and `bucket-row ${item.eagerness}` for non-completed items
     // TODO: Add a key attribute set to the value of the index position
     // Hint: use a ternary operator
-    // TODO: Fix these properly
-    <div className={'bucket row'} key={index}>
-
-      // TODO: Add an onClick event that invokes the `completeBucketItem` method passing the item id as a argument
-      <div key={index} onClick={() => {} }>
-          {/* TODO: Add the item text here */}
+    // TODO: Completed items
+  */}
+  return props.bucket.map((item, index) => (
+    < div className={`bucket row ${item.eagerness}`} key={index} >
+      <div key={index} onClick={() => { }}>
+        {item.text}
       </div>
       <div className="icons">
-        // TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties
-        <p onClick={() => {}}> ✏️</p>
+        {/* TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties */}
+        <p onClick={() => { }}> ✏️</p>
         {/* TODO: Add an onClick event that will invoke the removeBucketItem method passing in the `item.id` */}
-        <p onClick={() => {}}> 🗑️</p>
-      </div>
-    </div>
+        < p onClick={() => { }}> 🗑️</p >
+      </div >
+    </div >
   ));
 }
 
