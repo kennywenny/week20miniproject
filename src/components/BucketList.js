@@ -24,10 +24,8 @@ function BucketList() {
 
   // Function to remove bucket list item and update state
   const removeBucketItem = (id) => {
-    // TODO: Write logic that will return an array of items that don't contain the ID passed to this function
-
-
-    // TODO: Update the bucket state variable
+    const newBucket = bucket.filter(it => it.id !== id)
+    setBucket(newBucket)
   };
 
   // Function to edit the bucket list item
