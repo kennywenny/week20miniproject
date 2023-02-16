@@ -8,8 +8,6 @@ function Bucket(props) {
     eagerness: '',
   });
 
-  console.log(props.bucket);
-
   const submitUpdate = (value) => {
     props.editBucketItem(edit.id, value)
     setEdit({
