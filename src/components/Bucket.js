@@ -25,16 +25,9 @@ function Bucket(props) {
     return <BucketForm edit={edit} onSubmit={submitUpdate} />;
   }
 
-  {/*
-    // TODO: Add a className of `bucket row complete ${item.eagerness}` for completed items, and `bucket-row ${item.eagerness}` for non-completed items
-    // Hint: use a ternary operator
-    // TODO: Completed items
-  */}
   return props.bucket.map((item, index) => (
     <div className={`bucket row ${item.eagerness} ` + (item.complete ? 'complete' : '')} key={index} >
-      <div key={index} onClick={() => { }}>
-        {item.text}
-      </div>
+      <div key={index}>{item.text}</div>
       <div className="icons">
         <p onClick={() => setEdit(item)}> ✏️</p>
         <p onClick={() => props.removeBucketItem(item.id)}> 🗑️</p >
