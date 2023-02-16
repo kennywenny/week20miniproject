@@ -29,15 +29,14 @@ function Bucket(props) {
     // TODO: Completed items
   */}
   return props.bucket.map((item, index) => (
-    <div className={`bucket row ${item.eagerness}`} key={index} >
+    <div className={`bucket row ${item.eagerness} ` + (item.complete ? 'complete' : '')} key={index} >
       <div key={index} onClick={() => { }}>
         {item.text}
       </div>
       <div className="icons">
-        {/* TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties */}
         <p onClick={() => setEdit(item)}> ✏️</p>
-        {/* TODO: Add an onClick event that will invoke the removeBucketItem method passing in the `item.id` */}
         <p onClick={() => props.removeBucketItem(item.id)}> 🗑️</p >
+        <p onClick={() => props.completeBucketItem(item.id)}> C</p>
       </div >
     </div >
   ));
