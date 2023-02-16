@@ -37,7 +37,7 @@ function Bucket(props) {
         {/* TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties */}
         <p onClick={() => setEdit(item)}> ✏️</p>
         {/* TODO: Add an onClick event that will invoke the removeBucketItem method passing in the `item.id` */}
-        < p onClick={() => { }}> 🗑️</p >
+        <p onClick={() => { }}> 🗑️</p >
       </div >
     </div >
   ));
